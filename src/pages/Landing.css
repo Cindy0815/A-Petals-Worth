@@ -1,0 +1,213 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+    gap: 3rem;
+    /* ensures equal and perfect spacing between title, patches and buttons */
+}
+
+.title-section {
+    text-align: center;
+    margin-bottom: -2rem;
+    z-index: 10;
+}
+
+.title-section h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.title-section p {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.islands-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 550px;
+    margin: 0;
+    z-index: 1;
+}
+
+.island-img {
+    position: absolute;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.island-img:hover {
+    transform: translateY(-5px);
+}
+
+.patch-top-left {
+    top: 0%;
+    left: -10%;
+    width: 62%;
+    height: auto;
+}
+
+.patch-right {
+    top: 15%;
+    left: 55%;
+    width: 65%;
+    height: auto;
+}
+
+.patch-bottom-left {
+    top: 35%;
+    left: 1%;
+    width: 70%;
+    height: auto;
+}
+
+.button-group {
+    display: flex;
+    gap: 1.5rem;
+    z-index: 10;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(250, 248, 240, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    animation: fadeIn 0.3s ease;
+}
+
+.join-modal {
+    background: white;
+    padding: 3.5rem 2rem;
+    border-radius: 28px;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.join-modal h2 {
+    font-size: 1.15rem;
+    color: var(--color-text-main);
+    font-weight: 600;
+}
+
+.code-input-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.code-input {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid var(--color-text-main);
+    border-radius: 0;
+    background: transparent;
+    padding: 0.5rem;
+    color: var(--color-text-main);
+}
+
+.code-input::placeholder {
+    color: var(--color-text-muted);
+    opacity: 0.5;
+    letter-spacing: 0.5rem;
+}
+
+.code-input:focus {
+    outline: none;
+    border-bottom-color: var(--color-primary);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Session Creation Flow */
+
+.loading-screen {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--color-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease;
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.flower-loader {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+    animation: spin 4s linear infinite;
+    transform-origin: center;
+}
+
+.loader-content h2 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.8; }
+}

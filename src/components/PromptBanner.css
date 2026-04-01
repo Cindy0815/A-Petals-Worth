@@ -1,0 +1,122 @@
+.prompt-banner {
+    background-color: #FFF1ca;
+    padding: 1.4rem;
+    border-radius: 20px;
+    border: 3px solid #f3db93;
+    width: 400px;
+    pointer-events: auto;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+}
+
+.prompt-banner.hidden {
+    transform: translateY(-150%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.prompt-banner.collapsible-mode {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.prompt-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.edit-prompt-btn {
+    background: transparent;
+    border: none;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.edit-prompt-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--color-text-main);
+}
+
+.prompt-text {
+    font-size: 1.1rem;
+    color: var(--color-text-main);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.prompt-edit-mode {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.prompt-edit-mode input {
+    flex: 1;
+    border: 2px solid var(--color-secondary);
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    background: white;
+}
+
+.prompt-edit-mode input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.save-prompt-btn {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.save-prompt-btn:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.toggle-prompt-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 120px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    background-color: #FFF1ca;
+    color: #684f03;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toggle-prompt-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
